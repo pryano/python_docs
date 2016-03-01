@@ -31,14 +31,14 @@ def test_uppercase_wrong_type():
         x.upper()
 ```
 
-## Parametrized ##
+## Parametrized Tests##
 ```python
 import pytest
 
 good_words = ['jim', 'Jim', 'j_m', 'j1m']
 expected = ['JIM', 'JIM', 'J_M', 'J1M']
 
-@pytest.mark.parametrized('word, expected', zip(good_words, expected))
+@pytest.mark.parametrize('word, expected', zip(good_words, expected))
 def test_uppercase(word, expected):
     assert expected == word.upper()
 ```
