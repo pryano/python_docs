@@ -38,7 +38,7 @@ import pytest
 good_words = ['jim', 'Jim', 'j_m', 'j1m']
 expected = ['JIM', 'JIM', 'J_M', 'J1M']
 
-@pytest.parametrized('word, expected', good_words, expected)
+@pytest.mark.parametrized('word, expected', good_words, expected)
 def test_uppercase(word, expected):
     assert expected == word.upper()
 ```
