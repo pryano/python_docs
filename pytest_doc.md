@@ -1,9 +1,24 @@
+## Pycharm Setup ##
+Pycharm defaults to using unittest as the testrunner. To change it to pytest:
+
+1. In the menu, navigate to File:Settings:Tools:PythonIntegratedTools
+2. In the 'Default test runner' field, select 'py.test'
+3. Click 'OK' to save the change
+4. Select the drop down in the top right of the editor pane, adjacent to the green arrow
+5. Select 'Edit configurations...' in the dropdown
+6. In the left pane, navigate to Defaults:PythonTests:py.test
+7. Check the box to enable the options field and enter '--tb=line' (without quotes)
+8. Click 'OK' to save the change
+
 ## Basics ##
 ```python
 import pytest
 
 def test_uppercase():
     assert 'JIM' == 'jim'.upper()
+    
+def test_uppercase_number():
+    assert 'J1M' == 'j1m'.upper(), 'expected number to remain, other letters to be uppercase'
 ```
 
 ## Expected Exceptions ##
