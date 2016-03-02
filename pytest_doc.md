@@ -57,7 +57,7 @@ def test_library(book):
 ```
 
 ## Mocks ##
-Mocks can be used to make dummy objects. You can verify method calls on those objects or just use them so the real (heavier) objects are used.
+Mocks can be used to make dummy objects. You can verify method calls on those objects or just use them so the real (heavier) objects are not used.
 
 ```python
 import pytest
