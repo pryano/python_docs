@@ -56,6 +56,23 @@ def test_library(book):
     assert library.checkout_book(book)
 ```
 
+## Setup/Teardown Fixtures ##
+Your fixtures can include a teardown method to be called after the test is called:
+```python
+import pytest
+
+@pytest.fixture
+def book(request):                  ## must have request argument
+    Book = collections.namedtuple('Book', 'pages, add_stamp')
+    def teardown():                 ## define your teardown code
+        Book.close()
+    request.addfinalizer(teardown)  ## add the teardown method to the request object
+    return Book(20, lambda x: True)
+
+def test_library(book):
+    assert library.checkout_book(book)
+```
+
 ## Mocks ##
 Mocks can be used to make dummy objects. You can verify method calls on those objects or just use them so the real (heavier) objects are not used.
 
