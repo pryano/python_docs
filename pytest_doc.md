@@ -86,3 +86,16 @@ def test_library():
     library.checkout_book(mock_book)
     assert mock_book.add_stamp.call_count == 1
 ```
+
+## MonkeyPatch ##
+If you want to change what's returned from an object, but don't have control over the object's creation, you can monkeypatch the method you want to change.
+```python
+import pytest
+@pytest.fixture
+def no_db(monkeypatch):
+    monkeypatch.setattr(library.dbservice.BookService, 'find_all_books', lambda: {'Book A': {'pages': 90}})
+
+def test_library(no_db):
+    books = library.show_books()   # behind the scenes this calls BookService.find_all_books()
+    assert books == {'Book A': {'pages': 90}}
+```
