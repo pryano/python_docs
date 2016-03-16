@@ -8,11 +8,11 @@ Packages are directories that contain an `__init__.py` file and optional modules
 
 ## PIP ##
 Two distribution types:
-  * source
+  * source (_source_ distribution)
     * You must compile any cpython dependent code yourself.
     * Contains a setup.py file with build meta information and instructions
     * May contain documentation and tests
-  * wheel
+  * wheel ( _built_ distribution)
     * If there are dependencies that require cpython compilation, they are already compiled
     * Wheels in pypi usually try to be as general as possible
     * specific to platform, python version, and architecture
@@ -25,6 +25,11 @@ Two distribution types:
 | pip wheel --no-cache pycrypto | creates a wheel for you, always |
 | pip freeze | creates a requirements.txt file based on the installed packages in your current site-packages/venv |
 | pip install -r requirements.txt | install all packages found in the requirements.txt file |
+
+| option | description |
+| --- | --- |
+| --find-links | use the specified path to find package or wheel |
+| --no-index | do not search the online repository for packages |
 
 ## Virtual Env ##
   * Isolated python environment.
