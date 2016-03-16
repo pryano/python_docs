@@ -3,7 +3,7 @@
 ## Modules and Packages ##
 Modules are files ending in .py
 
-Packages are directories that contain an init.py file and optional modules and packages.
+Packages are directories that contain an `__init__.py` file and optional modules and packages.
 
 
 ## PIP ##
@@ -23,7 +23,7 @@ Two distribution types:
 | --- | --- |
 | pip wheel pycrypto  | creates a wheel for you, unless you have a cached version |
 | pip wheel --no-cache pycrypto | creates a wheel for you, always |
-| pip freeze | creates a requirements.txt file based on the installed packages in your current directory/venv |
+| pip freeze | creates a requirements.txt file based on the installed packages in your current site-packages/venv |
 | pip install -r requirements.txt | install all packages found in the requirements.txt file |
 
 ## Virtual Env ##
