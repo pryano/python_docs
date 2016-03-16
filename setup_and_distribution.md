@@ -32,15 +32,17 @@ Two distribution types:
   * Prevents package collision where different versions are required for different projects.
 
   * virtualenvwrapper
-    | command | description |
-    | --- | --- |
-    | lsvirtualenv | list available virtual environments |
-    | mkvirtualenv my_proj | create a virtual environment |
-    | deactivate | deactivate the current virtual environment |
-    | workon my_proj | switch to target virtual environment |
-    | setvirtualenvproject | associate the current directory with a virtual environment |
-    | rmvirtualenv my_proj | delete the virtual environment |
-    
+
+| command | description |
+| --- | --- |
+| lsvirtualenv | list available virtual environments |
+| mkvirtualenv my_proj | create a virtual environment |
+| mkvirtualenv my_proj -p python3.4 | create a virtual environment with python version 3.4 |
+| deactivate | deactivate the current virtual environment |
+| workon my_proj | switch to target virtual environment |
+| setvirtualenvproject | associate the current directory with a virtual environment |
+| rmvirtualenv my_proj | delete the virtual environment |
+ 
 ### Pycharm ###
   * Settings
     * project: name
