@@ -2,7 +2,7 @@
 
 ### Default param ###
 Documents and SubDocuments are specified as classes that subclass the Document or EmbeddedDocument classes.
-Fields are specified as class variables.
+Fields are specified as class variables. Custom fields can be made by subclassing an existing field type.
 
 
 ```python
@@ -10,9 +10,13 @@ class Recipe(Document):
   title = StringField(required=True)
   ingredients = EmbeddedDocumentList(Ingredient)
 
-  
+
+class NameField(StringField):
+  pass
+
+
 class Ingredient(EmbeddedDocument):
-  name = StringField(required=True)
+  name = NameField(required=True)
   smell = StringField(choices=('good', 'not good', 'not bad', 'bad'))
 ```
 And then we just create it:
@@ -31,3 +35,4 @@ class Man(Document):
   same_hairs = List(EmbeddedDocument(Hair))
 ```
 
+### Validation ###
