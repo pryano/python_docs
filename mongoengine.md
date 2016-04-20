@@ -26,7 +26,7 @@ r.validate()
 r.save()
 ```
 
-The tricky thing to remember is that a List expects an instance, but EmbeddedDocument or EmbeddedDocumentList expect a callable:
+The tricky thing to remember is that a List expects an instance, but EmbeddedDocument or EmbeddedDocumentList expect a callable (a class):
 ```python
 class Man(Document):
   names = List(StringField())
