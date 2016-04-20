@@ -1,7 +1,7 @@
 # MongoEngine #
 
-### Default param ###
-Documents and SubDocuments are specified as classes that subclass the Document or EmbeddedDocument classes.
+### Documents and EmbeddedDocuments ###
+Documents and EmbeddedDocuments are specified as classes that subclass the Document or EmbeddedDocument classes.
 Fields are specified as class variables. Custom fields can be made by subclassing an existing field type.
 
 
