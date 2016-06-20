@@ -11,6 +11,8 @@ Pycharm defaults to using unittest as the testrunner. To change it to pytest:
 8. Click 'OK' to save the change
 
 ## Basics ##
+Pytest will find all test functions that start with test_, and all test classes that start with Test.
+
 ```python
 import pytest
 
