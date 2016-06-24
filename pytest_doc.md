@@ -90,7 +90,7 @@ def test_library():
 ```
 
 Sometimes when testing, you want different method inputs to return different values on your mocks. Just make sure your `dic` keys are tuples (or change the lambda to accept non-tuples):
-```
+```python
 def return_values(dic):
     return lambda *args: dic[args]
 
