@@ -89,6 +89,24 @@ def test_library():
     assert mock_book.add_stamp.call_count == 1
 ```
 
+Sometimes when testing, you want different method inputs to return different values on your mocks. Just make sure your `dic` keys are tuples (or change the lambda to accept non-tuples):
+```
+def return_values(dic):
+    return lambda *args: dic[args]
+
+
+def test_find_mock():
+    x = Mock()
+    x.find = return_values({
+        (4, 5): 'called 4, 5',
+        ('a', 'b'): 'called a, b'
+    })
+
+    assert x.find(4, 5) == "called 4, 5"
+    assert x.find('a', 'b') == 'called a, b'
+    assert x.find() == None #throws exception if it's not mapped
+```
+
 ## MonkeyPatch ##
 If you want to change what's returned from an object, but don't have control over the object's creation, you can monkeypatch the method you want to change.
 ```python
