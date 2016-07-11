@@ -119,3 +119,19 @@ def test_library(no_db):
     books = library.show_books()   # behind the scenes this calls BookService.find_all_books()
     assert books == {'Book A': {'pages': 90}}
 ```
+
+Or you can use the `mock.patch` method, which may be easier when you're not just calling a static method:
+```python
+import pytest
+
+@pytest.fixture
+def mock_book_service(pages=100):
+    book_service = MagicMock()
+    book_service.find_all_books.return_value = {'Book A': {'pages': pages}}
+    return book_service
+
+@mock.patch('npr.library.BookService', return_value=mock_book_service())
+def test_library():
+    books = library.show_books()   # behind the scenes this would create a BookService and call find_all_books() on it
+    assert books == {'Book A': {'pages': 100}}
+```
