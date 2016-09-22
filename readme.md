@@ -8,3 +8,4 @@
 ####And the following are for reference as needed:####
  * [Pytest] (https://github.com/pryano/python_docs/blob/master/pytest_doc.md)
  * [MongoEngine](https://github.com/pryano/python_docs/blob/master/mongoengine.md)
+ * [Tox] (https://github.com/pryano/python_docs/blob/master/running_tests.md)
