@@ -32,6 +32,9 @@ deps=
 commands =
     coverage run setup.py test
     coverage report --omit .*
+
+# next line needs more research    
+install_command = pip install --pre --find-links ./shared_resources/bostoolkit/ --no-index {opts} {packages}
 ```
 
 Call tox to run the tests and coverage report: `tox`
