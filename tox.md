@@ -21,7 +21,7 @@ tests_require=['pytest'],
 ## TOX ##
 Install tox globally with `pip install tox`
 
-Create a file tox.ini:
+Create a file in your project named `tox.ini`:
 ``` ini
 [tox]
 envlist = py34,py35  # Note: you must have the python version on the machine already
@@ -37,4 +37,4 @@ commands =
 install_command = pip install --pre --find-links ./shared_resources/bostoolkit/ --no-index {opts} {packages}
 ```
 
-Call tox to run the tests and coverage report: `tox`
+Call `tox` from the command line or right-click your tox.ini file and select Run to run the tests and coverage report
