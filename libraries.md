@@ -13,7 +13,7 @@ _You can’t spawn processes from within Celery tasks._
 A frontend for managing and monitoring celery tasks.
 
 ### Marshmallow [3.3+]
-A library for marshalling objects (SqlAlchemy to JSON, etc)
+A backend-agnostic library for marshalling objects (SqlAlchemy to JSON, etc)
 
 ### Textract [3.3+]
 A package for extracting text from various formats (pdf, html, txt, etc.)
