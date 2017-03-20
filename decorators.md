@@ -23,6 +23,13 @@ def my_decorator(func):
   return wrapper
 ```
 
+Example:
+```python
+@my_decorator
+def run(name, distance):
+  pass
+```
+
 #### Accept Parameters
 For a decorator of the form `@my_decorator('param')`:
 
@@ -38,4 +45,11 @@ def my_decorator(param):
     return wrapper
     
   return func_wrapper
+```
+
+Example:
+```python
+@my_decorator('car')
+def run(name, distance):
+  pass
 ```
