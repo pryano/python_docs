@@ -26,3 +26,6 @@ Microservices framework with amqp support.
 
 ### Connexion [3.3+]
 Flask-based framework that generates rest endpoints based on your Swagger API described in YAML format.
+
+### Tenacity [3.3+]
+Add retry functionality using decorators with multiple backoff/stop strategies. A fork of retrying.
