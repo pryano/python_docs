@@ -10,6 +10,9 @@ Pycharm defaults to using unittest as the testrunner. To change it to pytest:
 7. Check the box to enable the options field and enter '--tb=line' (without quotes)
 8. Click 'OK' to save the change
 
+## Pytest Overview ##
+For a great overview of unit testing with pytest, see https://github.com/2achary/guest_list/blob/master/TestDrivingPytest.pdf
+
 ## Basics ##
 Pytest will find all test functions that start with test_, and all test classes that start with Test.
 
