@@ -138,3 +138,21 @@ def test_library():
     books = library.show_books()   # behind the scenes this would create a BookService and call find_all_books() on it
     assert books == {'Book A': {'pages': 100}}
 ```
+
+You can also mock context managers with your monkeypatch:
+```python
+
+@pytest.fixture
+def mock_connection():
+    mock = MagicMock(spec=kombu.Connection)
+    
+    # Connection is a context_manager, so its __enter__ will be called
+    # and since __enter__ should return `self`, that's where we set the return value to our mock
+    mock.return_value.__enter__.return_value = mock
+    return mock
+
+def test_make_a_connection(monkeypatch, mock_connection):
+    monkeypatch.setattr('rabbitmqservice.Connection', mock_connection)
+    rabbitmqservice.make_a_connection()
+    assert 1 == mock_connection.call_count    
+```
