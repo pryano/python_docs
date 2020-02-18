@@ -171,3 +171,21 @@ def test_make_a_connection(monkeypatch, mock_connection):
     rabbitmqservice.make_a_connection()
     assert 1 == mock_connection.call_count    
 ```
+
+## Logging ##
+You can use the `caplog` magic parameter to test log-related code:
+```python 
+def test_custom_log_formatter(caplog):
+    # generate a test log record
+    with caplog.at_level(logging.INFO):
+        logging.getLogger('test').error('Test info', extra={'size': 'small'})
+    record = caplog.records[0]
+```
+
+You can also use `caplog` to verify the contents of a log message:
+```python
+def test_loud_function(caplog):
+    my_service.generate_data()
+    assert 'Data Created' == caplog.records[0].message
+    assert 'Data Saved' == caplog.records[1].message
+```
